@@ -34,3 +34,9 @@ if __name__ == "__main__":
             key_i.append(int(key_t[i-1:i+1]))
 
     print(decrypt(encrypted_mess,key_i))
+    
+"""
+# Output
+
+    we are anonymous we are legion expect us
+"""
