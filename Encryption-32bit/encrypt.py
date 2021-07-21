@@ -1,3 +1,6 @@
+"""
+Program to encrypt the message
+"""
 import random
 
 # String for key and encrypted message
@@ -9,7 +12,6 @@ def create_Key():
     global key
 
     key_arr = []
-
     for i in range(32):
         temp = random.randint(10,20)
         key_arr.append(temp)
@@ -18,7 +20,6 @@ def create_Key():
 
 # method for encryption
 def encrypt(t):
-    global key
     global encrypted_mess
 
     key_arr = create_Key()
@@ -31,6 +32,7 @@ def encrypt(t):
 
         temp = key_arr[j-1]
         
+
         if i != ' ':
             encrypted_mess += chr(ord(i) - temp)
         else:
@@ -53,3 +55,9 @@ if __name__ == "__main__":
 
     file.close()
     key_file.close()
+
+"""
+# Output
+
+    TU^Za*_-Wa,_gd0cdXV,^ZOh[d   
+"""
