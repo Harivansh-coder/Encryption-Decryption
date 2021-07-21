@@ -15,13 +15,12 @@ def decrypt(t,key):
             j = 1 
 
         temp = key[j - 1]
-
         character = ord(i) - temp
 
         if character == 32:
             original_mess += chr(character)
         else:
-            character = chr(ord(i) + j)
+            character = chr(ord(i) + temp)
             original_mess += character
 
     return original_mess
@@ -43,4 +42,11 @@ if __name__ == "__main__":
             key_i.append(int(key_t[i-1:i+1]))
 
     print(decrypt(encrypted_mess,key_i))
-    
+   
+
+"""
+# Output:
+
+ Enter the string: TU^Za*_-Wa,_gd0cdXV,^ZOh[d   
+ hello i am pro pubg player
+"""
