@@ -53,7 +53,12 @@ if __name__ == "__main__":
 
     print("Cipher Text: ",result)
 
-    print("Original Text",decrypt(result,shift))
+    print("Original Text: ",decrypt(result,shift))
 
-
+"""
+# Output
+    Enter the number of character to shift: 4
+    Cipher Text:  wytivgsrhygxsvw
+    Original Text: superconductors
+"""
 
