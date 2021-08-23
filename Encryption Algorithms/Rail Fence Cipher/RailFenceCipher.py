@@ -2,7 +2,7 @@
 Rail Fence Cipher is an transposition cipher.
 """
 
-
+# function to encrypt the message
 def encrypt(text, depth):
     cipher_text = ""
     result = []
@@ -25,27 +25,24 @@ def encrypt(text, depth):
     return cipher_text
 
             
-
+# function to decrypt
 def decrypt(text, depth):
     plain_text = ""
-
-    result = []
-    temp = []
-    j = 1
-
-    for i in text:
-        temp.append(i)
-        if j == (len(text) / depth):
-            result.append(temp)
-            temp = []
-            j = 0
-        j += 1
-
     
+    length = (len(text) // depth)
 
-    for i in range(len(result)-1):
+    result = [[] for i in range(length)]
+
+    z = 0
+
+    for i in range(depth):
+        for j in result:
+            j.append(text[z])
+            z += 1
+
+    for i in range(len(result)):
         for j in range(depth):
-            plain_text += result[j][i]
+            plain_text += result[i][j]
     
     return plain_text
     
@@ -66,8 +63,13 @@ if __name__ == "__main__":
 """
 # Output
 
-    Enter the text: abcdef
+    Enter the text: Space time 
+    Enter the depth: 2
+    Saetmpc ie
+    Space time
+
+    Enter the text: attack on titans
     Enter the depth: 3
-    adbecf
-    abcdef
+    aa  ttcotatknin
+    attack on titan
 """
